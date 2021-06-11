@@ -1,0 +1,36 @@
+@import "../../../styles/base/variables";
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+  // background: #000;
+  width: 50%;
+  .contactInfo {
+    margin-bottom: 30px;
+    h6 {
+      font-size: 24px;
+      font-weight: bolder;
+      margin-bottom: 15px;
+    }
+
+    a {
+      font-size: 16px;
+      margin-left: 10px;
+      color: $pink;
+      text-decoration: none;
+      transition: 1s;
+      &:hover {
+        color: $black;
+      }
+    }
+    .iconInfo {
+      display: flex;
+
+      p {
+        margin-left: 10px;
+        font-size: 16px;
+        color: $gray;
+      }
+    }
+  }
+}

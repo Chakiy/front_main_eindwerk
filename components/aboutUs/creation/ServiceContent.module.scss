@@ -1,0 +1,25 @@
+@import "../../../styles/base/variables";
+
+.articleName {
+  .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: $pink;
+  }
+  h4 {
+    font-size: 18px;
+    font-weight: bolder;
+    line-height: 30px;
+    margin-top: 15px;
+  }
+  p {
+    color: $gray;
+    margin-top: 20px;
+    line-height: 20px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  h1 {
+    color: red;
+  }
+  h2 {
+    color: green;
+  }
+  a {
+    color: greenyellow;
+  }
+  p {
+    color: hotpink;
+    a {
+      color: indigo;
+    }
+  }
+}

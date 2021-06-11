@@ -1,0 +1,46 @@
+@import "../../styles/base/variables";
+
+.header {
+  background: rgb(94, 94, 139);
+  background: linear-gradient(
+    90deg,
+    rgba(94, 94, 139, 0.9794292717086834) 23%,
+    rgba(71, 103, 194, 0.9346113445378151) 74%,
+    rgba(88, 65, 157, 1) 100%
+  );
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-top: 24px;
+
+    .logoName {
+      text-decoration: none;
+
+      .beautyText {
+        font-family: "Herr Von Muellerhoff", cursive;
+        color: $pink;
+        font-size: 48px;
+        font-weight: 700;
+        font-style: italic;
+        letter-spacing: 2px;
+      }
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      li {
+        list-style: none;
+        padding-right: 15px;
+      }
+    }
+  }
+}

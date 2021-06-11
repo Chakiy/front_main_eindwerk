@@ -1,0 +1,11 @@
+@import "../../styles/base/variables";
+
+.link {
+  text-decoration: none;
+  color: $white;
+  font-weight: bold;
+
+  &:hover {
+    color: $pink;
+  }
+}

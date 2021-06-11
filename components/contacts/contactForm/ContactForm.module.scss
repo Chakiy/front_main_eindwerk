@@ -1,0 +1,59 @@
+@import "../../../styles/base/variables";
+
+.contactForm {
+  width: 100%;
+  h6 {
+    font-size: 24px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+  }
+  .formData {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+      width: 45%;
+      padding: 15px;
+    }
+  }
+  input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 30px;
+  }
+
+  textarea {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 15px;
+  }
+  .buttonSection {
+    display: flex;
+
+    .button,
+    .buttonSend {
+      font-size: 24px;
+      font-weight: bolder;
+      text-align: center;
+      display: block;
+      max-width: 50%;
+      background-color: $pink;
+      color: $white;
+      padding: 25px 50px;
+      margin: 20px 20px;
+      border-radius: 2px;
+      border: none;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #444f6c;
+      }
+    }
+    .buttonSend {
+      margin-left: 0px;
+    }
+  }
+}

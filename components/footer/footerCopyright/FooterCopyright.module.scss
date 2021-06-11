@@ -1,0 +1,18 @@
+@import "../../../styles/base/variables";
+
+.box {
+  background-color: $black;
+  color: $gray;
+  padding: 34px 0;
+  text-align: center;
+  .salon {
+    font-family: "Herr Von Muellerhoff", cursive;
+    color: $pink;
+    font-size: 48px;
+    padding: 15px;
+    border-bottom: 1px solid $gray;
+  }
+  .copyrights {
+    padding-top: 15px;
+  }
+}

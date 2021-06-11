@@ -1,0 +1,30 @@
+@import "../../../styles/base/variables";
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 54px 0;
+
+  .textContent {
+    padding: 50px;
+    h3 {
+      font-family: "Herr Von Muellerhoff", cursive;
+      font-size: 100px;
+      color: $pink;
+    }
+    h2 {
+      font-size: 70px;
+      font-weight: bolder;
+      text-transform: uppercase;
+      line-height: 60px;
+      letter-spacing: -5px;
+      padding-left: 40px;
+      margin-top: -20px;
+      margin-bottom: 20px;
+    }
+    p {
+      line-height: 15px;
+      color: $gray;
+    }
+  }
+}
