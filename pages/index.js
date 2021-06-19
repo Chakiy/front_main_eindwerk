@@ -16,7 +16,6 @@ function Home({ services, loggedIn, setLoggedIn }) {
     <>
       <Layout setLoggedIn={setLoggedIn} loggedIn={loggedIn}>
         <Banner />
-        <Banner />
         <Welcome />
         <Discount />
         <AboutUsCreation />
