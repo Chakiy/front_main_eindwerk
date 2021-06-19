@@ -26,7 +26,7 @@ function Appointment({
 }
 
 export default Appointment;
-export async function getServerSideProps(ctx) {
+export async function getStaticProps() {
   // const cookies = nookies.get(ctx);
   // const token = cookies.JWT;
   // console.log(cookies);
@@ -56,5 +56,6 @@ export async function getServerSideProps(ctx) {
   // props: { customer, decodedId, token },
   return {
     props: { cleanBookings },
+    revalidate: 1800,
   };
 }
