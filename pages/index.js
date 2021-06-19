@@ -28,7 +28,7 @@ function Home({ services, loggedIn, setLoggedIn }) {
 
 export default Home;
 
-export async function getServerSideProps(ctx) {
+export async function getServerSideProps() {
   // const cookies = nookies.get(ctx);
   // const token = cookies.JWT;
   // console.log(cookies);
