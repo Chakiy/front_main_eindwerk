@@ -1,5 +1,5 @@
 import FooterContacts from "./footerContacts/FooterContacts";
-import FooterCopyright from "./footerCopyright/FooterCopyright";
+import FooterCopyright from "./footerCopyright";
 import FooterMap from "./footerMap/FooterMap";
 
 function Footer() {

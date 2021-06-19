@@ -1,7 +1,12 @@
 import Icon from "../../Icon";
 import style from "./ServiceContent.module.scss";
 
-export default function ServiceContent({ header, description, iconName }) {
+export default function ServiceContent({
+  header,
+  duration,
+  description,
+  iconName,
+}) {
   return (
     <>
       <article className={style.articleName}>
@@ -9,6 +14,7 @@ export default function ServiceContent({ header, description, iconName }) {
           <Icon icon={iconName} size={30} color="white" />
         </div>
         <h4>{header}</h4>
+        <h6>Duration: {duration}</h6>
         <p>{description}</p>
       </article>
     </>

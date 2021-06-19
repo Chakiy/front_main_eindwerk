@@ -1,12 +1,11 @@
-import Nav from "../components/nav/Nav";
 import ContactPage from "../components/contacts/ContactPage";
+import Layout from "../components/Layout";
 
-function Contacts() {
+function Contacts({ loggedIn, setLoggedIn }) {
   return (
-    <div>
-      <Nav />
+    <Layout contact={true} loggedIn={loggedIn} setLoggedIn={setLoggedIn}>
       <ContactPage />
-    </div>
+    </Layout>
   );
 }
 

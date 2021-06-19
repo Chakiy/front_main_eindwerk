@@ -3,27 +3,25 @@ import { useState } from "react";
 import axios from "axios";
 function ContactForm() {
   const [name, setName] = useState("");
+  const [errorName, setErrorName] = useState("");
   const [email, setEmail] = useState("");
+  const [errorEmail, setErrorEmail] = useState("");
   const [questionAbout, setQuestionAbout] = useState("");
   const [message, setMessage] = useState("");
 
   function onNameChange(event) {
-    console.log(event.target.value);
     setName(event.target.value);
   }
 
   function onEmailChange(event) {
-    console.log(event.target.value);
     setEmail(event.target.value);
   }
 
   function onQuestionChange(event) {
-    console.log(event.target.value);
     setQuestionAbout(event.target.value);
   }
 
   function onMessageChange(event) {
-    console.log(event.target.value);
     setMessage(event.target.value);
   }
 
@@ -36,41 +34,55 @@ function ContactForm() {
   function handleSubmit(event) {
     event.preventDefault();
 
-    axios({
-      method: "POST",
-      url: "https://wdev2.be/khachatur21/eindwerk/api/questions.json",
-      data: { name, email, questionAbout, message },
-    }).then((response) => {
-      console.log(response.data);
+    if (
+      name != "" &&
+      name.includes("=") != -1 &&
+      email != "" &&
+      email.indexOf("@") != -1
+    ) {
+      setErrorName("");
+      setErrorEmail("");
+      axios.post(
+        "https://wdev2.be/khachatur21/eindwerk/myapi/questions",
+        `name=${name}&email=${email}&questionAbout=${questionAbout}&message=${message}`
+      );
+
       resetForm();
-      if (response.data.status === "success") {
-        alert("Message Sent.");
-      } else if (response.data.status === "fail") {
-        alert("Message failed to send.");
-      }
-    });
+    } else {
+      setErrorName("This form contains some errors!");
+    }
   }
   return (
     <>
       <div className={styles.contactForm}>
-        {console.log(name)}
         <h6>Email us with any questions.</h6>
+        {/* {errorName != "" && <p>This form contains errors</p>} */}
+
         <form id="contact-form" onSubmit={handleSubmit} method="POST">
           <div className={styles.formData}>
             {/* <label htmlFor="name">Name</label> */}
+            {errorName != "" && (
+              <p className={styles.error}>This form contains errors</p>
+            )}
             <input
               type="text"
               placeholder="Name"
-              //   name="name"
+              name="name"
+              // id="name"
               value={name}
               onChange={onNameChange}
             />
 
             {/* <label htmlFor="exampleInputEmail1">Email address</label> */}
+            {errorEmail != "" && (
+              <p className={styles.error}>This please write correct email</p>
+            )}
             <input
               type="email"
               placeholder="Email"
               aria-describedby="emailHelp"
+              name="email"
+              // id="email"
               value={email}
               onChange={onEmailChange}
             />
@@ -78,6 +90,8 @@ function ContactForm() {
           <input
             type="text"
             placeholder="Question about"
+            name="questionAbout"
+            // id="questionAbout"
             value={questionAbout}
             onChange={onQuestionChange}
           />
@@ -87,6 +101,8 @@ function ContactForm() {
             className="form-control"
             rows="10"
             placeholder="Message"
+            name="message"
+            // id="message"
             value={message}
             onChange={onMessageChange}
           />

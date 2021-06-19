@@ -1,0 +1,46 @@
+@import "../../../styles/base/variables";
+.parallaxContainer {
+  background-color: $black;
+  // margin-bottom: 80px;
+  overflow: hidden;
+  position: relative;
+
+  .parallax {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: center center;
+    opacity: 0.3 !important;
+  }
+  .parallaxContent {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: $white;
+    padding-top: 84px;
+    padding-bottom: 60px;
+
+    .parallaxContentText {
+      font-family: "Herr Von Muellerhoff", cursive;
+      font-size: 70px;
+      color: $pink;
+    }
+    .parallaxContentHeader {
+      font-size: 70px;
+      font-weight: bolder;
+      text-transform: uppercase;
+    }
+    .parallaxContentDescription {
+      padding-top: 30px;
+      max-width: 60%;
+      line-height: 25px;
+      font-size: 16px;
+      margin: 0 auto;
+    }
+  }
+}

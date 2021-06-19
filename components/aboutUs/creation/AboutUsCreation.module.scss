@@ -8,11 +8,11 @@
     margin-bottom: 54px;
     display: flex;
     justify-content: center;
-    // align-items: center;
 
     .salonName {
       margin-right: 25px;
       h3 {
+        margin-top: 50px;
         font-family: "Herr Von Muellerhoff", cursive;
         font-size: 90px;
         color: $pink;
@@ -33,7 +33,7 @@
         font-size: 22px;
         font-weight: bolder;
         line-height: 30px;
-        margin-top: 65px;
+        margin-top: 113px;
       }
       p {
         color: $gray;

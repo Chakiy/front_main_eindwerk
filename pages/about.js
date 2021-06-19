@@ -1,11 +1,14 @@
-import AboutUs from "../components/aboutUs/AboutUs";
-import Footer from "../components/footer/Footer";
-function About() {
+import Layout from "../components/Layout";
+import AboutUsCreation from "../components/aboutUs/creation/AboutUsCreation";
+import OurTeam from "../components/aboutUs/ourTeam/OurTeam";
+import Award from "../components/aboutUs/award/Award";
+function About({ loggedIn, setLoggedIn }) {
   return (
-    <>
-      <AboutUs />
-      <Footer />
-    </>
+    <Layout loggedIn={loggedIn} setLoggedIn={setLoggedIn}>
+      <AboutUsCreation />
+      <Award />
+      <OurTeam />
+    </Layout>
   );
 }
 

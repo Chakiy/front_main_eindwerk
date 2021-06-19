@@ -11,7 +11,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    .error {
+      color: red;
+    }
     input {
       width: 45%;
       padding: 15px;

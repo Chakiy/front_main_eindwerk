@@ -1,0 +1,39 @@
+@import "../../styles/base/variables";
+
+.datatime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .time,
+  .calendar {
+    width: 50%;
+    height: 50%;
+    margin: 0 25px;
+    background-color: red;
+  }
+  .calendar {
+    margin: 25px;
+    z-index: 0;
+  }
+}
+
+.buttonBook {
+  font-size: 24px;
+  font-weight: bolder;
+  text-align: center;
+  display: block;
+  max-width: 50%;
+  background-color: $pink;
+  color: $white;
+  padding: 25px 50px;
+  margin: 20px auto;
+  border-radius: 2px;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #444f6c;
+  }
+}

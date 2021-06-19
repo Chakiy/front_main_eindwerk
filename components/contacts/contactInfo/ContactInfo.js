@@ -21,7 +21,7 @@ function ContactInfo() {
         </div>
         <div className={styles.contactInfo}>
           <h6>E-mail:</h6>
-          <Icon icon="time" size={18} color="gray" />
+          <Icon icon="mail" size={18} color="gray" />
           <a href="mailto:casilias35@hotmail.com">casilias35@hotmail.com</a>
         </div>
       </div>

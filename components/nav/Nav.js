@@ -1,13 +1,20 @@
 import LinkA from "../Link/LinkA";
 import style from "./Nav.module.scss";
+import Icon from "../Icon";
+import LoginForm from "../login/loginForm/LoginForm";
+import { useRef } from "react";
+function Nav({ setLoggedIn, loggedIn }) {
+  const myRef = useRef();
+  function myFunction() {
+    myRef.current.classList.toggle(style.show);
+  }
 
-function Nav() {
   return (
     <header className={style.header}>
       <div className="wrapper">
         <nav>
           <a className={style.logoName} href="/" title="beauty-logo">
-            <span className={style.beautyText}>Beauty Salon</span>
+            <span className={style.beautyText}>Beauty Salon Lakshmi</span>
           </a>
           <ul>
             <li>
@@ -28,12 +35,27 @@ function Nav() {
             <li>
               <LinkA href="/appointment" text="Appointment" />
             </li>
-            <li>
-              <LinkA href="/login" text="Login" />
+            <li className={style.account}>
+              <div className={style.icon} onClick={myFunction}>
+                <Icon
+                  icon="user"
+                  size={18}
+                  color="white"
+                  className={style.iconn}
+                />
+              </div>
+              <div ref={myRef} className={style.login}>
+                <LoginForm
+                  myRef={myRef}
+                  setLoggedIn={setLoggedIn}
+                  loggedIn={loggedIn}
+                />
+              </div>
             </li>
-            <li>
-              <LinkA href="/register" ext="Register" />
-            </li>
+
+            {/* <li>
+              <LinkA href="/registration" text="Register" />
+            </li> */}
           </ul>
         </nav>
       </div>

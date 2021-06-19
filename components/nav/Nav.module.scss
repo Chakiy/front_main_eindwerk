@@ -41,6 +41,28 @@
         list-style: none;
         padding-right: 15px;
       }
+
+      .account {
+        padding-right: 0;
+        .login {
+          visibility: hidden;
+          opacity: 0;
+        }
+        .show {
+          visibility: visible;
+          opacity: 1;
+          z-index: 10;
+        }
+        .hide {
+          visibility: hidden;
+          opacity: 0;
+        }
+        &:hover {
+          .iconn {
+            color: $pink;
+          }
+        }
+      }
     }
   }
 }

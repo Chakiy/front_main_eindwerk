@@ -1,6 +1,4 @@
-import FooterCopyright from "../footer/footerCopyright/FooterCopyright";
 import FooterMap from "../footer/footerMap/FooterMap";
-import Nav from "../nav/Nav";
 import ContactForm from "./contactForm/ContactForm";
 import ContactInfo from "./contactInfo/ContactInfo";
 import styles from "./ContactPage.module.scss";
@@ -8,7 +6,6 @@ import styles from "./ContactPage.module.scss";
 function ContactPage() {
   return (
     <>
-      <Nav />
       <div className="wrapper">
         <div className={styles.map}>
           <h1>Location</h1>
@@ -19,7 +16,6 @@ function ContactPage() {
           <ContactForm />
         </div>
       </div>
-      <FooterCopyright />
     </>
   );
 }

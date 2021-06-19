@@ -1,20 +1,6 @@
 import style from "./AboutUsCreation.module.scss";
-import ServiceContent from "./ServiceContent";
-import { useState, useEffect } from "react";
-import Link from "next/link";
 
 function AboutUsCreation() {
-  const [services, setServices] = useState([]);
-
-  useEffect(async () => {
-    const resp = await fetch(
-      `https://wdev2.be/khachatur21/eindwerk/myapi/services`
-    );
-    const data = await resp.json();
-    // console.log(data);
-    setServices(data);
-  }, []);
-
   return (
     <>
       <div className="wrapper">
@@ -37,22 +23,6 @@ function AboutUsCreation() {
                 materials only!
               </p>
             </div>
-          </div>
-          <div className={style.servicesContent}>
-            {/* {console.log(services)} */}
-
-            {services.map((service) => (
-              <Link href={`/procedures/${service.name}`}>
-                <a>
-                  <ServiceContent
-                    key={service.name}
-                    iconName="color"
-                    header={service.name}
-                    description={service.description}
-                  />
-                </a>
-              </Link>
-            ))}
           </div>
         </div>
       </div>
