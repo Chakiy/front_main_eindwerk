@@ -3,17 +3,13 @@ import Booking from "../components/booking/Booking";
 import nookies from "nookies";
 import jwt_decode from "jwt-decode";
 
-function Appointment({
-  loggedIn,
-  setLoggedIn,
-  decodedId,
-  token,
-  cleanBookings,
-}) {
+function Appointment({ loggedIn, setLoggedIn, decodedId, token, bookings }) {
   return (
     <>
-      {/* <div>lkdnfdkc</div> */}
       <Layout loggedIn={loggedIn} setLoggedIn={setLoggedIn}>
+        {bookings.map((book) => (
+          <div>{book.data}</div>
+        ))}
         {/* <Booking
           cleanBookings={cleanBookings}
           // decodedId={decodedId}
@@ -27,7 +23,7 @@ function Appointment({
 }
 
 export default Appointment;
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // const cookies = nookies.get(ctx);
   // const token = cookies.JWT;
   // console.log(cookies);
@@ -54,6 +50,6 @@ export async function getServerSideProps() {
   // props: { customer, decodedId, token },
   return {
     props: { bookings },
-    revalidate: 1,
+    // revalidate: 1,
   };
 }
