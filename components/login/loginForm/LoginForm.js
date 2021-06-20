@@ -1,6 +1,6 @@
 import style2 from "./LoginForm.module.scss";
 import Link from "next/dist/client/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
@@ -11,9 +11,26 @@ function LoginForm(props) {
   console.log(props);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const [err, setErr] = useState("");
+  const [err, setErr] = useState(false);
+  const [errMessage, setErrMessage] = useState(false);
+  const [kook, setKook] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    console.log(kook);
+    if (kook) {
+      setErr(false);
+      props.setLoggedIn(true);
+    }
+    if (errMessage) {
+      setErr(true);
+      props.setLoggedIn(false);
+    }
+    if (kook && errMessage) {
+      setErr(false);
+      props.setLoggedIn(true);
+    }
+  }, [kook, errMessage]);
 
   function onEmailChange(event) {
     console.log(event.target.value);
@@ -26,15 +43,29 @@ function LoginForm(props) {
   function logout(event) {
     event.preventDefault();
     Cookies.remove("JWT");
+    Cookies.remove("errore");
+    setErr("");
     props.setLoggedIn(false);
     router.push("/");
   }
   function handleSubmit(event) {
     event.preventDefault();
     get_JWT();
-    props.myRef.current.classList.remove(style.show);
-    props.setLoggedIn(true);
-    router.push("/");
+    console.log(Cookies.get("JWT"));
+    setEmail("");
+    setPassword("");
+
+    if (kook) {
+      console.log(kook);
+      // setErr(true);
+      setErr(false);
+      props.setLoggedIn(true);
+    }
+
+    if (errMessage) {
+      setErr(true);
+      props.setLoggedIn(false);
+    }
   }
 
   function get_JWT() {
@@ -48,26 +79,28 @@ function LoginForm(props) {
         // console.log
         (response) => {
           // console.log(response.data.token);
+          // console.log(response.data.error);
+
           const token = response.data.token;
-          console.log(token);
           Cookies.set("JWT", token);
+          setKook(Cookies.set("JWT", token));
         }
       )
       .catch((error) => {
         console.log(error.response.data.message);
-        setErr(error.response.data.message);
+        // const errorCookie = error.response.data.message
+        setErrMessage(error.response.data.message);
       });
   }
   return (
     <>
-      {/* Cookies.get("JWT") */}
       {props.loggedIn ? (
-        <div className={style2.loginForm} id="aaaaaa">
-          <p>Welcome back</p>
-          <Link href="/account" className={style2.myAccount}>
-            <a>My account</a>
-          </Link>
+        <div className={style2.loginForm}>
           <form onSubmit={logout}>
+            <p>Welcome back</p>
+            <Link href="/account" className={style2.myAccount}>
+              <a className={style2.a}>My account</a>
+            </Link>
             <button type="submit" className={style2.buttonLogin}>
               LOGOUT
             </button>
@@ -75,6 +108,9 @@ function LoginForm(props) {
         </div>
       ) : (
         <div className={style2.loginForm} id="aaaaaa">
+          {err && (
+            <p className={style2.error}>{"Email or password is wrong"}</p>
+          )}
           <form id="loginForm" method="POST" onSubmit={handleSubmit}>
             <div className="formData">
               <h6>Email</h6>
@@ -109,42 +145,6 @@ function LoginForm(props) {
           </Link>
         </div>
       )}
-      {/* {Cookies.get("L") &&  } */}
-
-      {/* {err != "" && (
-          <p className={style.error}>Email or password is not correct</p>
-        )}
-        <form id="loginForm" method="POST" onSubmit={handleSubmit}>
-          <div className="formData">
-            <h6>Email</h6>
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              // id="email"
-              value={email}
-              onChange={onEmailChange}
-            />
-          </div>
-          <div className="formData">
-            <h6>Password</h6>
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              // id="name"
-              value={password}
-              onChange={onPasswordChange}
-            />
-          </div>
-
-          <button type="submit" className={style.buttonLogin}>
-            {" "}
-            LOGIN{" "}
-          </button>
-        </form> */}
-
-      {/* </div> */}
     </>
   );
 }

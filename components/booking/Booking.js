@@ -62,7 +62,8 @@ function Booking({ cleanBookings, loggedIn }) {
 
   function handleSubmit() {
     // event.preventDefault();
-
+    //     get voor post
+    // logica
     axios({
       method: "POST",
       url: `https://wdev2.be/khachatur21/eindwerk/api/appointments.json`,

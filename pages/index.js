@@ -9,9 +9,9 @@ import nookies from "nookies";
 import { useEffect } from "react";
 
 function Home({ services, loggedIn, setLoggedIn }) {
-  useEffect(() => {
-    console.log(loggedIn);
-  }, [loggedIn]);
+  // useEffect(() => {
+  //   console.log(loggedIn);
+  // }, [loggedIn]);
   return (
     <>
       <Layout setLoggedIn={setLoggedIn} loggedIn={loggedIn}>

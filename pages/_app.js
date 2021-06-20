@@ -10,11 +10,9 @@ function MyApp({ Component, pageProps }) {
     const jwt = Cookies.get("JWT");
     console.log(jwt);
     if (jwt) {
-      const { id } = jwt_decode(jwt);
-      if (id) {
-        // console.log(id);
-        setLoggedIn(true);
-      }
+      setLoggedIn(true);
+    } else {
+      setLoggedIn(false);
     }
   }, []);
   return (
