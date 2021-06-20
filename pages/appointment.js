@@ -8,7 +8,7 @@ function Appointment({ loggedIn, setLoggedIn, decodedId, token, bookings }) {
     <>
       <Layout loggedIn={loggedIn} setLoggedIn={setLoggedIn}>
         {bookings.map((book) => (
-          <div>{book.data}</div>
+          <div>{book.date}</div>
         ))}
         {/* <Booking
           cleanBookings={cleanBookings}
