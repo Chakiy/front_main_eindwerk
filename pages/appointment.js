@@ -36,10 +36,7 @@ export async function getStaticProps() {
   // console.log(decodedId);
 
   const resp = await fetch(
-    `https://wdev2.be/khachatur21/eindwerk/api/appointments.json`,
-    {
-      // headers: { Authorization: `Bearer ${token}` },
-    }
+    `https://wdev2.be/khachatur21/eindwerk/api/appointments.json`
   );
 
   console.log(resp);
