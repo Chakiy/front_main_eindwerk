@@ -12,21 +12,22 @@ function Appointment({
 }) {
   return (
     <>
+      {/* <div>lkdnfdkc</div> */}
       <Layout loggedIn={loggedIn} setLoggedIn={setLoggedIn}>
-        <Booking
+        {/* <Booking
           cleanBookings={cleanBookings}
           // decodedId={decodedId}
           // token={token}
           loggedIn={loggedIn}
           setLoggedIn={setLoggedIn}
-        />
+        /> */}
       </Layout>
     </>
   );
 }
 
 export default Appointment;
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // const cookies = nookies.get(ctx);
   // const token = cookies.JWT;
   // console.log(cookies);
@@ -41,9 +42,9 @@ export async function getStaticProps() {
 
   console.log(resp);
   const bookings = await resp.json();
-  // console.log(bookings);
-  const cleanBookings = bookings.map((book) => book.date);
-  console.log(cleanBookings);
+  console.log(bookings);
+  // const cleanBookings = bookings.map((book) => book.date);
+  // console.log(cleanBookings);
 
   // const userBooking = bookings.filter(
   //   (book) =>
@@ -52,7 +53,7 @@ export async function getStaticProps() {
   // console.log(userBooking);
   // props: { customer, decodedId, token },
   return {
-    props: { cleanBookings },
+    props: { bookings },
     revalidate: 1,
   };
 }
