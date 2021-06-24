@@ -1,17 +1,40 @@
 @import "../../styles/base/variables";
 
+.proceduresBlock {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 20px;
+  font-weight: bolder;
+
+  label {
+    font-size: 28px;
+    color: $gray;
+    margin: 15px;
+  }
+  select {
+    font-weight: bolder;
+
+    font-size: 28px;
+    color: $pink;
+    margin: 0 auto;
+    width: 50%;
+    padding: 15px;
+  }
+}
 .datatime {
   display: flex;
   justify-content: center;
   align-items: center;
-  .time,
+
   .calendar {
     width: 50%;
     height: 50%;
     margin: 0 25px;
-    background-color: red;
-  }
-  .calendar {
+    z-index: 0;
+    color: $pink;
+    padding: 0px;
     margin: 25px;
     z-index: 0;
   }

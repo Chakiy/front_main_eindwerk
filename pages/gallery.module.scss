@@ -1,0 +1,24 @@
+@import "../styles/base/variables";
+
+.gallery {
+  // margin: 0 auto;
+  margin: 200px auto;
+  text-align: center;
+  h3 {
+    font-family: "Herr Von Muellerhoff", cursive;
+    font-size: 90px;
+    color: $pink;
+    margin-left: -260px;
+    z-index: 2;
+  }
+  h2 {
+    font-size: 60px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    line-height: 50px;
+    letter-spacing: 0px;
+    padding-left: 40px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+  }
+}

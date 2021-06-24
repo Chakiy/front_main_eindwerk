@@ -7,7 +7,14 @@ import nookies from "nookies";
 import axios from "axios";
 import { useRouter } from "next/router";
 
-function Account({ customer, decodedId, token, setLoggedIn, loggedIn }) {
+function Account({
+  customer,
+  decodedId,
+  token,
+  setLoggedIn,
+  loggedIn,
+  appointment,
+}) {
   const router = useRouter();
 
   const [name, setName] = useState(customer.name);
@@ -21,6 +28,13 @@ function Account({ customer, decodedId, token, setLoggedIn, loggedIn }) {
   const [city, setCity] = useState(customer.address.city);
   const [email, setEmail] = useState(customer.email);
   const [password, setPassword] = useState(customer.password);
+
+  const [userBookings, setUserBookings] = useState(
+    appointment.filter(
+      (el) =>
+        el.customerApp === `/khachatur21/eindwerk/api/customers/${decodedId}`
+    )
+  );
 
   // const [user, setUser] = useState();
   // const [userData, setUserData] = useState([]);
@@ -103,13 +117,20 @@ function Account({ customer, decodedId, token, setLoggedIn, loggedIn }) {
 
   return (
     <>
+      {console.log(
+        appointment.filter(
+          (el) =>
+            el.customerApp ===
+            `/khachatur21/eindwerk/api/customers/${decodedId}`
+        )
+      )}
       {loading ? (
         <p>loading</p>
       ) : (
         <Layout setLoggedIn={setLoggedIn} loggedIn={loggedIn}>
           <div className="wrapper">
             <div className={styles.contactForm}>
-              <div className={styles.register}>
+              <div className={styles.userBookingsDetailHeader}>
                 <h3>User</h3>
                 <h2>Detail</h2>
               </div>
@@ -240,9 +261,28 @@ function Account({ customer, decodedId, token, setLoggedIn, loggedIn }) {
                 </button>
               </form>
 
-              <div className={styles.register}>
+              <div className={styles.userBookingsDetailHeader}>
                 <h3>User</h3>
                 <h2>Bookings</h2>
+              </div>
+              <div className={styles.userBookingsDetailBlock}>
+                {userBookings.length > 0 ? (
+                  userBookings.map((el) => (
+                    <div className={styles.bookingsBlock}>
+                      <h3>Appointmen</h3>
+                      <div className={styles.dateTimeTitle}>
+                        <h4>Date:</h4>
+                        <p>{el.date.slice(0, 10)}</p>
+                      </div>
+                      <div className={styles.dateTimeTitle}>
+                        <h4>Time:</h4>
+                        <p>{el.time.slice(11, 16)}</p>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div>No Bookings yet</div>
+                )}
               </div>
             </div>
           </div>
@@ -274,7 +314,14 @@ export async function getServerSideProps(ctx) {
   const customer = await resp.json();
   console.log(customer);
 
+  const respBooking = await fetch(
+    `https://wdev2.be/khachatur21/eindwerk/api/appointments.json`
+  );
+
+  // console.log(resp);
+  const appointment = await respBooking.json();
+
   return {
-    props: { customer, decodedId, token },
+    props: { customer, decodedId, token, appointment },
   };
 }
