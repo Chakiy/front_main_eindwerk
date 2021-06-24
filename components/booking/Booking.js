@@ -14,6 +14,7 @@ function Booking({ bookings, loggedIn }) {
   const [procedure, setProcedure] = useState("");
   const [dataValue, setDataValue] = useState(new Date());
   const [dateBookings, setDateBookings] = useState(bookings);
+  const [bookedFull, setBookedFull] = useState(false);
 
   //take user Id if user logged in
   const [userId, setUserId] = useState(
@@ -96,6 +97,7 @@ function Booking({ bookings, loggedIn }) {
   }
 
   function onDateChange(e) {
+    setBookedFull(false);
     console.log(e.value.slice(0, 14));
     setDataValue(e.value);
   }
@@ -118,7 +120,7 @@ function Booking({ bookings, loggedIn }) {
         url: `https://wdev2.be/khachatur21/eindwerk/api/appointments.json`,
         data: {
           date: dataValue,
-          time: "1970-01-01T10:00:00+01:00",
+          time: dataValue.slice(11, 16),
           customerApp: `/khachatur21/eindwerk/api/customers/${userId}`,
           service: `/khachatur21/eindwerk/api/services/${procedure}`,
           slot: 10,
@@ -167,6 +169,7 @@ function Booking({ bookings, loggedIn }) {
       if (10 - countSlotDay === 1) {
         console.log("ABRAKADABRA this day is full booked");
         // setInvalidDate([...invalidDate, dataValue]);
+        setBookedFull(true);
       } else {
         if (10 - countSlotDay === 1) {
           console.log("ABRAKADABRA is gelijkaan 2");
@@ -179,7 +182,7 @@ function Booking({ bookings, loggedIn }) {
           url: `https://wdev2.be/khachatur21/eindwerk/api/appointments.json`,
           data: {
             date: dataValue,
-            time: "1970-01-01T10:00:00+01:00",
+            time: dataValue.slice(11, 16),
             customerApp: `/khachatur21/eindwerk/api/customers/${userId}`,
             service: `/khachatur21/eindwerk/api/services/${procedure}`,
             slot: 10 - countSlotDay,
@@ -260,6 +263,7 @@ function Booking({ bookings, loggedIn }) {
             <option value="5">Peeling</option>
           </select>
         </div>
+        {bookedFull && <p>This day is full booked</p>}
 
         <Page>
           <div className={styles.datatime}>

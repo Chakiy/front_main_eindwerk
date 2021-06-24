@@ -2,11 +2,11 @@ export default {
   title: "Beauty Salon Lakshmi",
   description:
     "Welkom op ons nieuw beauty salon Lakshmi waar je alles vind over gezonde lichaam en prachtige look",
-  canonical: "https://front-end-eindwerk.vercel.app/",
+  canonical: "https://front-main-eindwerk.vercel.app/",
   openGraph: {
     type: "website",
     locale: "nl",
-    url: "https://front-end-eindwerk.vercel.app/",
+    url: "https://front-main-eindwerk.vercel.app/",
     site_name: "Lakshmi",
     title: "Beauty Salon Lakshmi",
     description:

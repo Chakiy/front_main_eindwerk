@@ -14,7 +14,7 @@ function Home({ services, loggedIn, setLoggedIn }) {
     title: "Beauty Salon Lakshmi",
     description: "Alles over beauty salon Lakshmi vind je op deze pagina",
     openGraph: {
-      url: "https://front-end-eindwerk.vercel.app/competitie",
+      url: "https://front-main-eindwerk.vercel.app/",
       title: "Beauty Salon Lakshmi",
       images: [
         {
