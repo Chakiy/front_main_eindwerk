@@ -5,9 +5,52 @@ function HeadData() {
     <Head>
       <title>Beauty Salon Lakshmi</title>
       <meta name="description" content="Beauty Salon Lakshmi" />
-      <link rel="icon" href="/favicon.ico" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://metatags.io/" />
+      <meta property="og:title" content="Beauty Salon Lakshmi" />
+      <meta
+        property="og:description"
+        content="We are specified to bring your health and look to the top level as never before.
+Be Happy, Be with us
+"
+      />
+      <meta
+        property="og:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
+      />
+      {/* //Twitter */}
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="https://metatags.io/" />
+      <meta property="twitter:title" content="Beauty Salon Lakshmi" />
+      <meta
+        property="twitter:description"
+        content="We are specified to bring your health and look to the top level as never before.
+Be Happy, Be with us
+"
+      />
+      <meta
+        property="twitter:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
+      />
+      <link
+        rel="icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG2XrpDfhGIRZG18HtifmKxvBEqs4XKdiXUq7XxtFv7acBcPEzpAy9QzaV06MM27eBUdE&usqp=CAU"
+      />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
       ;
+      <meta name="title" content="Beauty Salon Lakshmi" />
+      <meta
+        name="description"
+        content="we are specified to bring your health and look to top level"
+      />
+      <meta
+        name="keywords"
+        content="Salon, beauty, style, seo, girl, botox, pilling, procedure, book your botox, face, hair, health"
+      />
+      <meta name="robots" content="index, follow" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="language" content="English" />
+      <meta name="author" content="KHACHATUR HOVSEPYAN" />
     </Head>
   );
 }
