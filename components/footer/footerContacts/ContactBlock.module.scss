@@ -13,3 +13,46 @@
     font-size: 16px;
   }
 }
+
+@media (max-width: 951px) {
+  .square {
+    display: flex;
+
+    .icon {
+      margin: 0 15px;
+    }
+    h4 {
+      font-size: 14px;
+      font-weight: bolder;
+    }
+    p {
+      margin-top: 20px;
+      line-height: 10px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 830px) {
+  .square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+
+    .icon {
+      margin: 0 15px;
+    }
+    h4 {
+      font-size: 18px;
+      font-weight: bolder;
+    }
+    p {
+      margin-top: 20px;
+      line-height: 10px;
+      font-size: 18px;
+    }
+  }
+}

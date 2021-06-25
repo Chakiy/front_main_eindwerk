@@ -107,6 +107,7 @@ function RegisterForm() {
             <div className={styles.formData}>
               <label htmlFor="name">Name</label>
               <input
+                className={styles.input}
                 type="text"
                 placeholder="Name"
                 name="name"
@@ -119,6 +120,7 @@ function RegisterForm() {
             <div className={styles.formData}>
               <label htmlFor="lastName">Last Name</label>
               <input
+                className={styles.input}
                 type="text"
                 placeholder="Last Name"
                 name="lastName"
@@ -131,6 +133,7 @@ function RegisterForm() {
             <div className={styles.formData}>
               <label htmlFor="gsm">Gsm</label>
               <input
+                className={styles.input}
                 type="number"
                 placeholder="Gsm"
                 name="gsm"
@@ -161,6 +164,7 @@ function RegisterForm() {
             <div className={styles.formData}>
               <label htmlFor="bday">Birth Day</label>
               <input
+                className={styles.input}
                 type="date"
                 placeholder="Birth Day"
                 name="bday"
@@ -173,6 +177,7 @@ function RegisterForm() {
             <div className={styles.formData}>
               <label htmlFor="street">Street</label>
               <input
+                className={styles.input}
                 type="text"
                 placeholder="Street"
                 name="street"
@@ -185,6 +190,7 @@ function RegisterForm() {
             <div className={styles.formData}>
               <label htmlFor="streetNr">Street nr</label>
               <input
+                className={styles.input}
                 type="text"
                 placeholder="Street nr"
                 name="streetNr"
@@ -197,6 +203,7 @@ function RegisterForm() {
             <div className={styles.formData}>
               <label htmlFor="zipCode">Zip code</label>
               <input
+                className={styles.input}
                 type="text"
                 placeholder="Zip code"
                 name="zipCode"
@@ -209,6 +216,7 @@ function RegisterForm() {
             <div className={styles.formData}>
               <label htmlFor="city">City</label>
               <input
+                className={styles.input}
                 type="text"
                 placeholder="City"
                 name="city"
@@ -221,6 +229,7 @@ function RegisterForm() {
             <div className={styles.formData}>
               <label htmlFor="email">Email address</label>
               <input
+                className={styles.input}
                 type="email"
                 placeholder="Email"
                 name="email"
@@ -234,6 +243,7 @@ function RegisterForm() {
             <div className={styles.formData}>
               <label htmlFor="password">Password</label>
               <input
+                className={styles.input}
                 type="password"
                 placeholder="Password"
                 name="password"

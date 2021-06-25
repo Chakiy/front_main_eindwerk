@@ -63,10 +63,6 @@
     .rightBlock {
       width: 100%;
     }
-    .rightBlock {
-      //   border-left: 1px solid $gray;
-      margin-left: 50px;
-    }
   }
 
   .formData {
@@ -107,14 +103,18 @@
       background-color: #444f6c;
     }
   }
-
-  //   .buttonSection {
-  //     display: flex;
-  //     padding-left: 100px;
-  //     margin: 70px 0;
 }
-// }
 
-// .buttonEdit {
-//   margin-left: 0px;
-// }
+.rightBlock {
+  width: 100%;
+  margin-left: 20px;
+}
+.leftBlock {
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .rightBlock {
+    margin-left: 0px;
+  }
+}

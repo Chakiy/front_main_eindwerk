@@ -122,45 +122,52 @@ function Nav({ setLoggedIn, loggedIn }) {
               finalFocusRef={btnRef}
             >
               <DrawerOverlay />
-              <DrawerContent bg="BLACK" opacity="0.8">
+              <DrawerContent bg="black" opacity="0.8">
                 <DrawerCloseButton
+                  color="#ec8bb3"
+                  backgroundColor="black"
+                  border="none"
                   fontSize="1.3em"
                   mx={4}
                   my={3}
                   _focus={{ outline: 0 }}
-                  _hover={{ background: "none", opacity: 0.6 }}
+                  _hover={{
+                    background: "none",
+                    opacity: 0.6,
+                    color: "#ec8bb3",
+                  }}
                 />
                 <DrawerHeader
                   borderBottom="1px solid #ec8bb3"
                   my={3}
                   fontSize="18px"
                 >
-                  Lakshmi
+                  <h3 style={{ color: "#ec8bb3" }}>Lakshmi</h3>
                 </DrawerHeader>
 
-                <DrawerBody>
+                <DrawerBody fontSize="20px" mt="50px">
                   <HStack flexDirection="column">
                     <ul>
-                      <li>
+                      <li style={{ marginBottom: "15px" }}>
                         <LinkA href="/" text="Home" />
                       </li>
-                      <li>
+                      <li style={{ marginBottom: "15px" }}>
                         <LinkA href="/about" text="About" />
                       </li>
-                      <li>
+                      <li style={{ marginBottom: "15px" }}>
                         <LinkA href="/procedures" text="Services" />
                       </li>
-                      <li>
+                      <li style={{ marginBottom: "15px" }}>
                         <LinkA href="/gallery" text="Gallery" />
                       </li>
-                      <li>
+                      <li style={{ marginBottom: "15px" }}>
                         <LinkA href="/contacts" text="Contacts" />
                       </li>
-                      <li>
+                      <li style={{ marginBottom: "15px" }}>
                         <LinkA href="/appointment" text="Appointment" />
                       </li>
-                      <li>
-                        <LinkA href="/login" text="Login" />
+                      <li style={{ marginBottom: "15px" }}>
+                        <LinkA href="/account" text="Account" />
                       </li>
                     </ul>
                   </HStack>

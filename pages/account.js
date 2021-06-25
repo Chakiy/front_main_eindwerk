@@ -6,6 +6,7 @@ import styles from "./account.module.scss";
 import nookies from "nookies";
 import axios from "axios";
 import { useRouter } from "next/router";
+import { Flex } from "@chakra-ui/react";
 
 function Account({
   customer,
@@ -135,7 +136,11 @@ function Account({
                 <h2>Detail</h2>
               </div>
               <form id="userform" onSubmit={handleSubmit} method="POST">
-                <div className={styles.form}>
+                {/* <div className={styles.form}> */}
+                <Flex
+                  flexDirection={["column", "column", "column", "row", "row"]}
+                  justifyContent="space-around"
+                >
                   <div className={styles.leftBlock}>
                     <div className={styles.formData}>
                       <label htmlFor="name">Name</label>
@@ -254,7 +259,8 @@ function Account({
                       />
                     </div>
                   </div>
-                </div>
+                </Flex>
+                {/* </div> */}
                 <button type="submit" className={styles.buttonEdit}>
                   {" "}
                   change{" "}

@@ -263,7 +263,6 @@ function Booking({ bookings, loggedIn }) {
             <option value="5">Peeling</option>
           </select>
         </div>
-        {bookedFull && <p>This day is full booked</p>}
 
         <Page>
           <div className={styles.datatime}>
