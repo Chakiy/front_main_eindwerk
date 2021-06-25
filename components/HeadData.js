@@ -6,7 +6,10 @@ function HeadData() {
       <title>Beauty Salon Lakshmi</title>
       <meta name="description" content="Beauty Salon Lakshmi" />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://metatags.io/" />
+      <meta
+        property="og:url"
+        content="https://front-main-eindwerk.vercel.app/"
+      />
       <meta property="og:title" content="Beauty Salon Lakshmi" />
       <meta
         property="og:description"
@@ -20,7 +23,10 @@ Be Happy, Be with us
       />
       {/* //Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="https://metatags.io/" />
+      <meta
+        property="twitter:url"
+        content="https://front-main-eindwerk.vercel.app/"
+      />
       <meta property="twitter:title" content="Beauty Salon Lakshmi" />
       <meta
         property="twitter:description"
