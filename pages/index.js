@@ -12,16 +12,16 @@ import { NextSeo } from "next-seo";
 function Home({ services, loggedIn, setLoggedIn }) {
   const SEO = {
     title: "Beauty Salon Lakshmi",
-    description: "Alles over beauty salon Lakshmi vind je op deze pagina",
+    description: "Find all about how to bring your look to next level",
     openGraph: {
       url: "https://front-main-eindwerk.vercel.app/",
       title: "Beauty Salon Lakshmi",
       images: [
         {
-          url: "https://static.wixstatic.com/media/c90e66_7f23c531f1834e869a1468d3bcdcc291~mv2.jpeg/v1/fill/w_640,h_480,fp_0.54_0.45,q_80,usm_0.66_1.00_0.01/c90e66_7f23c531f1834e869a1468d3bcdcc291~mv2.webp",
+          url: "https://static.wixstatic.com/media/c90e66_7f23c531f1834e869a1468d3bcdcc291~mv2.jpeg",
           width: 500,
           height: 400,
-          alt: "Logo van Beauty Salon Lakshmi",
+          alt: "Logo of Beauty Salon Lakshmi",
         },
       ],
     },
