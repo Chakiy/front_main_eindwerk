@@ -64,6 +64,7 @@ function ContactForm() {
             {errorName != "" && (
               <p className={styles.error}>This form contains errors</p>
             )}
+
             <input
               type="text"
               placeholder="Name"
