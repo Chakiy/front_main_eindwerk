@@ -16,6 +16,13 @@ body {
   margin: auto;
 }
 
+@media (max-width: 700px) {
+  .wrapper {
+    width: 85%;
+    margin: auto;
+  }
+}
+
 // .account {
 // .loginForm {
 //   // display: none;
